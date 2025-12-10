@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  /* Base Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Blues – Dark */
+  --color-blue-950: #14172e;
+  --color-blue-900: #161932;
+  --color-blue-850: #1e213f;
+
+  /* Blues – Light */
+  --color-blue-100: #d7e0ff;
+  --color-blue-50: #eff1fa;
+
+  /* Grey */
+  --color-grey-400: #bbbdcb;
+  --color-grey-200: #e4e2e2;
+
+  /* Accent Colors */
+  --color-cyan-300: #70f3f8;
+  --color-red-400: #f87070;
+  --color-purple-400: #d881f8;
+
+  /* Gradients (as tokens) */
+  --gradient-1: linear-gradient(135deg, #2e325a 0%, #0e112a 100%);
+  --gradient-1-60: linear-gradient(
+    135deg,
+    rgba(14, 17, 42, 0.6),
+    rgba(14, 17, 42, 0.6)
+  );
+}
+
+@layer utilities {
+  .font-kumbh {
+    font-family: "Kumbh Sans", sans-serif;
+  }
+
+  .font-rslab {
+    font-family: "Roboto Slab", serif;
+  }
+
+  .font-space {
+    font-family: "Space Mono", monospace;
+  }
+}
