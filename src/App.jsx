@@ -1,10 +1,11 @@
-import { Main } from "./pages";
+import { Main, Settings } from "./pages";
 
 function App() {
   return (
     <>
       <div className="">
-        <Main />
+        {/* <Main /> */}
+        <Settings />
       </div>
     </>
   );

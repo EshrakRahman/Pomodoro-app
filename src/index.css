@@ -45,12 +45,3 @@
     font-family: "Space Mono", monospace;
   }
 }
-
-@layer components {
-  .mode-btn {
-    @apply font-kumbh text-blue-850 text-[12px] leading-[125%] px-5 py-4 rounded-4xl cursor-pointer;
-  }
-  .mode-btn-active {
-    @apply bg-red-400;
-  }
-}
