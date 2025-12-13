@@ -1,5 +1,6 @@
 import { Button, ClockComponent } from "../components";
 import settingsIcon from "../assets/icon-settings.svg";
+import { Link } from "react-router";
 
 export default function Main() {
   return (
@@ -11,9 +12,9 @@ export default function Main() {
         <Button />
         <ClockComponent />
         <div className="py-10">
-          <a href="">
+          <Link to="/settings">
             <img src={settingsIcon} alt="Settings icon" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

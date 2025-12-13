@@ -1,25 +1,33 @@
+import { Link, Links } from "react-router";
 import closeIcon from "../assets/icon-close.svg";
 import InputButton from "./InputButton";
+
 export default function SettingsPage() {
   return (
     <>
-      <div className=" relative max-w-[330px] pb-10  bg-white rounded-lg py-5 shadow-lg">
+      <div className=" relative w-[330px] md:w-[540px] pb-10 px-4 md:px-6  bg-white rounded-lg py-5 shadow-lg">
         <div className="border-b border-gray-200 flex justify-between p-4 items-center  ">
           <p className="font-kumbh font-bold text-3xl leading-[125%] text-blue-900  ">
             Settings
           </p>
           <div className="">
-            <img src={closeIcon} alt="Close icon" />
+            <Link to="/">
+              <img
+                className="hover:cursor-pointer"
+                src={closeIcon}
+                alt="Close icon"
+              />
+            </Link>
           </div>
         </div>
-        <div className="input-area py-4 px-4 flex flex-col justify-between ">
+        <div className="input-area py-4 flex flex-col justify-between ">
           <p className="font-kumbh text-blue-900 font-bold text-[11px] text-center mb-6 tracking-[5px] uppercase">
             time (minutes)
           </p>
-          <div className="flex flex-col gap-4 border-b pb-6 border-gray-200">
-            <InputButton />
-            <InputButton />
-            <InputButton />
+          <div className="flex flex-col md:flex-row md:justify-center gap-4 border-b pb-6 border-gray-200">
+            <InputButton title="pomodoro" type="pomo" />
+            <InputButton title="short break" type="short" />
+            <InputButton type="long" title="long break" />
           </div>
         </div>
 
@@ -27,7 +35,7 @@ export default function SettingsPage() {
           <p className="font-kumbh text-blue-900 font-bold text-[11px] text-center mb-6 tracking-[5px] uppercase">
             Font
           </p>
-          <div className="opitions flex items-center justify-center gap-4">
+          <div className="opitions border-b border-gray-200 pb-5  flex items-center justify-center gap-4">
             <p className=" h-10 w-10 rounded-full font-kumbh flex  items-center justify-center text-white bg-blue-900">
               Aa
             </p>
@@ -40,7 +48,7 @@ export default function SettingsPage() {
           </div>
         </div>
 
-        <div className="colors-option ">
+        <div className="colors-option border-b border-gray-200 pb-5">
           <p className="font-kumbh text-blue-900 font-bold text-[11px] text-center mb-6 tracking-[5px] uppercase">
             Colors
           </p>
@@ -50,10 +58,13 @@ export default function SettingsPage() {
             <div className="h-10 w-10 bg-purple-400 items-center justify-center rounded-full font-kumbh"></div>
           </div>
         </div>
-        <div className="absolute left-[27%] top-[95%]">
-          <button className="px-10  hover:cursor-pointer  py-3 bg-red-400 rounded-4xl text-white font-kumbh">
+        <div className="absolute left-[27%] md:left-[38%] top-[95%]">
+          <Link
+            to="/"
+            className="px-10  hover:cursor-pointer  py-3 bg-red-400 rounded-4xl text-white font-kumbh"
+          >
             Apply
-          </button>
+          </Link>
         </div>
       </div>
     </>

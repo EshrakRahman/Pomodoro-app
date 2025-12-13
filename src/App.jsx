@@ -1,12 +1,20 @@
+import { BrowserRouter, Route, Routes } from "react-router";
 import { Main, Settings } from "./pages";
+import { TimerProvider } from "./context/TimerContex";
 
 function App() {
   return (
     <>
-      <div className="">
-        {/* <Main /> */}
-        <Settings />
-      </div>
+      <TimerProvider>
+        <div className="">
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Main />} />
+              <Route path="/settings" element={<Settings />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </TimerProvider>
     </>
   );
 }
