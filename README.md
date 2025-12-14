@@ -1,16 +1,89 @@
-# React + Vite
+![Pomodoro App Preview](./screenshot.jpg)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my solution to the [Pomodoro app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G). The app allows users to manage their work and break intervals using a customizable timer interface with a circular progress bar.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Overview](#overview)
+  - [The Challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Live Demo](#live-demo)
+- [Features](#features)
+- [Built With](#built-with)
+- [What I Learned](#what-i-learned)
+- [Continued Development](#continued-development)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-## React Compiler
+## Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### The Challenge
 
-## Expanding the ESLint configuration
+Users should be able to:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Set a Pomodoro timer and short & long break timers
+- Customize the duration of each timer
+- See a circular progress bar that updates as the timer counts down
+- Customize fonts and colors for the app interface
+
+### Screenshot
+
+![Pomodoro Screenshot](/src/assets/screenshoots/desktop.png)
+![Pomodoro Screenshot](/src/assets/screenshoots/desktop-l.png)
+![Pomodoro Screenshot](/src/assets/screenshoots/tablet.png)
+![Pomodoro Screenshot](/src/assets/screenshoots/mobile.png)
+
+### Live Demo
+
+[View live site](https://pomodoroeshrak.netlify.app/)
+
+## Features
+
+- Dynamic Pomodoro, short break, and long break timers
+- Circular progress bar with countdown
+- Customizable colors and fonts
+- Responsive design for mobile and desktop
+- Pause/Start functionality
+
+## Built With
+
+- [React](https://reactjs.org/) - Frontend library
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Styled Components](https://styled-components.com/) - Component-level styling
+- CSS Flexbox & Grid for layout
+
+## What I Learned
+
+- Managing multiple states and contexts in React
+- Using React Context API for global state (timers and settings)
+- Animating and controlling a circular progress bar dynamically
+- Structuring a React project for maintainability
+- Integrating user settings to update UI in real-time
+
+```js
+// Example: Countdown timer logic with context
+const [secondsLeft, setSecondsLeft] = useState(durations[mode] * 60);
+useEffect(() => {
+  const interval = setInterval(() => setSecondsLeft((s) => s - 1), 1000);
+  return () => clearInterval(interval);
+}, [isRunning]);
+```
+
+## Continued Development
+
+- Add sound notifications when timers end
+- Save user preferences in local storage
+- Add more themes and color options
+- Improve accessibility for screen readers
+
+## Author
+
+- **Eshrak Rahman**
+- Frontend Mentor - [@EshrakRahman](https://www.frontendmentor.io/profile/EshrakRahman)
+- GitHub - [EshrakRahman](https://github.com/EshrakRahman)
+- Live Site - [Pomodoro App](https://pomodoroeshrak.netlify.app/)
+
+## Acknowledgments
+
+- Thanks to Frontend Mentor for providing realistic project challenges.
+- Inspired by various Pomodoro timer designs online.
