@@ -1,4 +1,4 @@
-![Pomodoro App Preview](./screenshot.jpg)
+![Pomodoro App Preview](./preview.jpg)
 
 This is my solution to the [Pomodoro app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G). The app allows users to manage their work and break intervals using a customizable timer interface with a circular progress bar.
 
