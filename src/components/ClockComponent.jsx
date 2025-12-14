@@ -38,9 +38,17 @@ export default function ClockComponent() {
   ).padStart(2, "0")}`;
 
   const totalSeconds = (durations?.[mode] ?? 25) * 60;
-  const progressValue = totalSeconds
-    ? ((totalSeconds - secondsLeft) / totalSeconds) * 100
-    : 0;
+
+  let progressValue;
+
+  if (!isRunning && secondsLeft === totalSeconds) {
+    progressValue = 100;
+  } else {
+    progressValue =
+      totalSeconds > 0
+        ? ((totalSeconds - secondsLeft) / totalSeconds) * 100
+        : 0;
+  }
 
   return (
     <div className="relative circle w-[300px] md:w-[410px] md:h-[410px] h-[300px] rounded-full bg-gradient-1 shadow-2xl/30 flex items-center justify-center">
@@ -52,10 +60,10 @@ export default function ClockComponent() {
           value={progressValue}
           strokeWidth={6}
           styles={buildStyles({
-            pathColor: "#F87070", 
-            trailColor: "transparent", 
+            pathColor: "#F87070",
+            trailColor: "transparent",
             strokeLinecap: "round",
-            rotation: 0, 
+            rotation: 0,
           })}
         />
       </div>
