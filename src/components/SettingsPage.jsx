@@ -58,7 +58,7 @@ export default function SettingsPage() {
             <div className="h-10 w-10 bg-purple-400 items-center justify-center rounded-full font-kumbh"></div>
           </div>
         </div>
-        <div className="absolute left-[27%] md:left-[38%] top-[95%]">
+        <div className="absolute left-[30%] md:left-[38%] top-[98%]">
           <Link
             to="/"
             className="px-10  hover:cursor-pointer  py-3 bg-red-400 rounded-4xl text-white font-kumbh"
